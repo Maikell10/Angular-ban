@@ -1,0 +1,128 @@
+<app-filtros></app-filtros>
+<div class="bootstrap-wrapper">
+    <div class="container-fluid mt20 mb20">
+
+        <div>
+            <mat-carousel timings="550ms ease-in" [autoplay]="false" color="accent" maxWidth="auto" [loop]="true"
+                [hideArrows]="true" [hideIndicators]="false" [useKeyboard]="true" [useMouseWheel]="false"
+                orientation="ltr" slideHeight="300px" [maintainAspectRatio]="false" [interval]="3000">
+                <mat-carousel-slide overlayColor="whitesmoke" [hideOverlay]="false">
+                    <div class="row mt10">
+                        <div class="col-md-6 offset-md-3">
+                            <mat-card>
+                                <h3 class="text-center header-title">Intervención Cambiaria</h3>
+                                <mat-card-content>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <h3>Subasta Activa</h3>
+                                        </div>
+                                        <div class="col-6 text-right">
+                                            <p>{{intCamb.subastaActiva}}</p>
+                                        </div>
+                                    </div>
+                                    <hr class="lineBreak">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <h3>Monto Ofertado</h3>
+                                        </div>
+                                        <div class="col-6 text-right">
+                                            <p>{{intCamb.montoOfertado}}</p>
+                                        </div>
+                                    </div>
+                                    <hr class="lineBreak">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <h3>Posición Disponible</h3>
+                                        </div>
+                                        <div class="col-6 text-right">
+                                            <p>{{intCamb.posicionDisponible}}</p>
+                                        </div>
+                                    </div>
+                                    <hr class="lineBreak">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <h3>Posición Liquidada</h3>
+                                        </div>
+                                        <div class="col-6 text-right">
+                                            <p>{{intCamb.posicionLiquidada}}</p>
+                                        </div>
+                                    </div>
+                                </mat-card-content>
+                            </mat-card>
+                        </div>
+                    </div>
+                </mat-carousel-slide>
+                <mat-carousel-slide overlayColor="whitesmoke" [hideOverlay]="false">
+                    <div class="row mt10">
+                        <div class="col-md-6 offset-md-3">
+                            <mat-card>
+                                <h3 class="text-center header-title">Remesa</h3>
+
+                                <mat-card-content class="text-center">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6 col-6">
+                                            <h3>Cantidad</h3>
+                                            <p>{{remesa.cantidad}}</p>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-6">
+                                            <h3>Monto</h3>
+                                            <p>{{remesa.monto}}</p>
+                                        </div>
+                                    </div>
+                                </mat-card-content>
+                            </mat-card>
+                        </div>
+                    </div>
+                </mat-carousel-slide>
+                <mat-carousel-slide overlayColor="whitesmoke" [hideOverlay]="false">
+                    <div class="row mt10">
+                        <div class="col-md-6 offset-md-3">
+                            <mat-card>
+                                <h3 class="text-center header-title">Mesa de Cambio</h3>
+
+                                <mat-card-content class="text-center">
+                                    <div class="row">
+                                        <div class="col-md-4 col-sm-4 col-4">
+                                            <h3>Posición</h3>
+                                            <p>{{mesaCamb.posicion}}</p>
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-4">
+                                            <h3>Acumulada</h3>
+                                            <p>{{mesaCamb.acumulada}}</p>
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-4">
+                                            <h3>Del Día</h3>
+                                            <p>{{mesaCamb.delDia}}</p>
+                                        </div>
+                                    </div>
+                                    <hr class="lineBreak">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6 col-6">
+                                            <h3>Nº Operaciones</h3>
+                                            <p>{{mesaCamb.numOp}}</p>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-6">
+                                            <h3>Monto</h3>
+                                            <p>{{mesaCamb.monto}}</p>
+                                        </div>
+                                    </div>
+                                    <hr class="lineBreak">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6 col-6">
+                                            <h3>Compra</h3>
+                                            <p>{{mesaCamb.compra}}</p>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-6">
+                                            <h3>Venta</h3>
+                                            <p>{{mesaCamb.venta}}</p>
+                                        </div>
+                                    </div>
+                                </mat-card-content>
+                            </mat-card>
+                        </div>
+                    </div>
+                </mat-carousel-slide>
+            </mat-carousel>
+        </div>
+    </div>
+</div>

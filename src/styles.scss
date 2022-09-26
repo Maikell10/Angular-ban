@@ -1,0 +1,137 @@
+/* You can add global styles to this file, and also import other style files */
+@import "@angular/material/theming";
+
+@include mat-core();
+
+// Primary colour
+$my-app-primary: mat-palette($mat-indigo);
+// Accent colour
+$my-app-accent: mat-palette($mat-green, A700, A100, A400);
+
+$my-app-theme: mat-light-theme($my-app-primary, $my-app-accent);
+@include angular-material-theme($my-app-theme);
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Helvetica", sans-serif;
+  background: #f5f5f5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: #003c71;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.ml20 {
+  margin-left: 20px !important;
+}
+
+.mr20 {
+  margin-right: 20px !important;
+}
+
+.mt20 {
+  margin-top: 20px !important;
+}
+
+.mb20 {
+  margin-bottom: 20px !important;
+}
+
+.ml10 {
+  margin-left: 10px !important;
+}
+
+.mr10 {
+  margin-right: 10px !important;
+}
+
+.mt10 {
+  margin-top: 10px !important;
+}
+
+.mb10 {
+  margin-bottom: 10px !important;
+}
+
+.m10 {
+  margin: 10px !important;
+}
+
+.m0 {
+  margin: 0 !important;
+}
+
+.p7 {
+  padding: 7px;
+}
+
+.p10 {
+  padding: 10px;
+}
+
+.swal2-icon.swal2-info {
+  border-color: #029e6d !important;
+  color: #029e6d !important;
+}
+
+body {
+  scrollbar-width: thin;
+  /* "auto" or "thin" */
+  scrollbar-color: #007953 lightgray;
+  /* scroll thumb and track */
+}
+
+body {
+  scrollbar-width: thin;
+  /* "auto" or "thin" */
+  scrollbar-color: #007953 lightgray;
+  /* scroll thumb and track */
+}
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #007953 lightgray;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: lightgray;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #007953;
+  border-radius: 20px;
+  border: 3px solid lightgray;
+}

@@ -1,0 +1,7 @@
+{
+    "/FCMASecurityOutAppSvc/*":{
+        "target":"http://10.135.5.29:8001",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}

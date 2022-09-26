@@ -1,0 +1,79 @@
+<div class="bootstrap-wrapper">
+    <h2 class="header-title text-center">Filtros de Búsqueda</h2>
+
+    <form (ngSubmit)="guardarFiltros()">
+        <div class="row">
+            <div class="col-md-4">
+                <mat-form-field appearance="fill" class="mt20 w100">
+                    <mat-label>Bancos</mat-label>
+                    <mat-select name="banco" [(ngModel)]="filtroData.banco.bancoId">
+                        <mat-option [value]=""></mat-option>
+                        <mat-option *ngFor="let b of bancos" [value]="b.bancoId">
+                            {{b.banco}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field appearance="fill" class="mt20 w100">
+                    <mat-label>Mecanismos</mat-label>
+                    <mat-select name="mecanismo" [(ngModel)]="filtroData.mecanismo.mecanismoId">
+                        <mat-option *ngFor="let m of mecanismos" [value]="m.mecanismoId">
+                            {{m.mecanismo}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field appearance="fill" class="mt20 w100">
+                    <mat-label>Forma de Pago</mat-label>
+                    <mat-select name="formaPago" [(ngModel)]="filtroData.formaPago.formaPagoId">
+                        <mat-option *ngFor="let fp of formaPagos" [value]="fp.formaPagoId">
+                            {{fp.formaPago}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <mat-form-field appearance="fill" class="mt20 w100">
+                    <mat-label>Divisas</mat-label>
+                    <mat-select name="divisa" [(ngModel)]="filtroData.divisa.divisaId">
+                        <mat-option *ngFor="let d of divisas" [value]="d.divisaId">
+                            {{d.divisa}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field appearance="fill" class="mt20 w100">
+                    <mat-label>Canal</mat-label>
+                    <mat-select name="canal" [(ngModel)]="filtroData.canal.canalId">
+                        <mat-option *ngFor="let c of canales" [value]="c.canalId">
+                            {{c.canal}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field appearance="fill" class="mt20 w100">
+                    <mat-label>Cajero</mat-label>
+                    <mat-select name="cajero" [(ngModel)]="filtroData.cajero.cajeroId">
+                        <mat-option *ngFor="let cj of cajeros" [value]="cj.cajeroId">
+                            {{cj.cajero}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <app-spinner-load *ngIf="carga"></app-spinner-load>
+
+        <div class="container text-right">
+            <button mat-raised-button style="margin-right: 10px;">Guardar</button>
+            <button mat-raised-button mat-dialog-close>Cerrar</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,49 @@
+<div class="bootstrap-wrapper">
+    <h2 class="header-title text-center">Inyección / Absorción</h2>
+
+    <form (ngSubmit)="formSubmit()">
+        <div class="row">
+            <div class="col-md-6 col-6">
+                <mat-form-field appearance="fill" class="mt20 w100">
+                    <mat-select name="inyAbs" [(ngModel)]="formData.inyAbs">
+                        <mat-option [value]="'inyeccion'">Inyección</mat-option>
+                        <mat-option [value]="'absorcion'">Absorción</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Divisas: Dolar</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <mat-form-field class="w100" appearance="fill">
+                    <mat-label>Monto</mat-label>
+                    <input [(ngModel)]="formData.monto" required type="text" name="monto" placeholder="Digite el monto"
+                        matInput>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <mat-form-field class="w100" appearance="fill">
+                    <mat-label>Concepto</mat-label>
+                    <input [(ngModel)]="formData.concepto" required type="text" name="concepto"
+                        placeholder="Digite el monto" matInput>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <app-spinner-load *ngIf="carga"></app-spinner-load>
+
+        <div class="container text-right">
+            <button mat-raised-button style="margin-right: 10px;">Guardar</button>
+            <button mat-raised-button mat-dialog-close>Cerrar</button>
+        </div>
+    </form>
+</div>

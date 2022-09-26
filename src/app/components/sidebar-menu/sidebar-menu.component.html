@@ -1,0 +1,61 @@
+<mat-action-list class="sidebar">
+    <div mat-subheader>
+        Menu
+    </div>
+
+    <button mat-list-item routerLink="/home" class="buttonMenu" (click)="sidebarService.toggleRightSidenav()">
+        <mat-icon mat-list-icon>home</mat-icon> Inicio
+    </button>
+    <button mat-list-item (click)="openFiltros('500ms', '500ms')" class="buttonMenu">
+        <mat-icon mat-list-icon>filter_list</mat-icon> Filtros de Búsqueda
+    </button>
+    <button mat-list-item (click)="openParams('500ms', '500ms')" class="buttonMenu">
+        <mat-icon mat-list-icon>label_important</mat-icon> Parámetros
+    </button>
+
+    <button mat-list-item [matMenuTriggerFor]="menu" class="buttonMenu">
+        <mat-icon mat-list-icon>video_label</mat-icon> Monitores <mat-icon>keyboard_arrow_down</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" class="ml20">
+        <button mat-menu-item routerLink="/monitor-detallado" (click)="sidebarService.toggleRightSidenav()">
+            <mat-icon class="buttonMenu">description</mat-icon>
+            <span>Detallado</span>
+        </button>
+        <button mat-menu-item routerLink="/monitor-resumen" (click)="sidebarService.toggleRightSidenav()">
+            <mat-icon class="buttonMenu">receipt</mat-icon>
+            <span>Resumen</span>
+        </button>
+    </mat-menu>
+
+    <button mat-list-item (click)="openInyecAbs('500ms', '500ms')" class="buttonMenu">
+        <mat-icon mat-list-icon>add_circle_outline</mat-icon> Inyección/Absorción
+    </button>
+    <button mat-list-item (click)="openCierre('500ms', '500ms')" class="buttonMenu">
+        <mat-icon mat-list-icon>clear</mat-icon> Cierre
+    </button>
+    <button mat-list-item (click)="openReportes('500ms', '500ms')" class="buttonMenu">
+        <mat-icon mat-list-icon>assignment</mat-icon> Reportes
+    </button>
+
+    <button mat-list-item mat-list-item [matMenuTriggerFor]="menu2" class="buttonMenu">
+        <mat-icon mat-list-icon>build</mat-icon> Mantenimiento <mat-icon>keyboard_arrow_down</mat-icon>
+    </button>
+    <mat-menu #menu2="matMenu" class="ml20">
+        <button mat-menu-item>
+            <mat-icon class="buttonMenu">business</mat-icon>
+            <span>Productos</span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon class="buttonMenu">list_alt</mat-icon>
+            <span>Tablas</span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon class="buttonMenu">label</mat-icon>
+            <span>Tasas</span>
+        </button>
+    </mat-menu>
+
+    <button mat-list-item (click)="logout()" class="buttonMenu">
+        <mat-icon mat-list-icon>logout</mat-icon> Salir
+    </button>
+</mat-action-list>

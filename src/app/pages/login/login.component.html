@@ -1,0 +1,36 @@
+<div class="bootstrap-wrapper">
+    <div class="container" style="margin-top: 4rem;margin-bottom: 4rem;">
+        <div class="row mt20">
+            <app-spinner-load *ngIf="carga"></app-spinner-load>
+            <div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+                <mat-card>
+                    <div class="container" style="background-color: #007953;border-radius: 6px;">
+                        <h1 class="text-center" style="color: white;padding: 10px">Ingrese sus datos</h1>
+                    </div>
+                    <form (ngSubmit)="formSubmit()">
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Nombre de usuario</mat-label>
+                            <input [(ngModel)]="loginData.username" required matInput
+                                placeholder="Digite su nombre de usuario" name="username">
+                            <mat-hint>El nombre de usuario debe ser válido</mat-hint>
+                        </mat-form-field>
+
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Contraseña</mat-label>
+                            <input [(ngModel)]="loginData.password" required type="password" matInput
+                                placeholder="Digite su contraseña" name="password">
+                            <mat-hint>La contraseña debe ser válida</mat-hint>
+                        </mat-form-field>
+
+                        <br><br>
+
+                        <div class="container text-center">
+                            <button mat-raised-button
+                                style="background-color: #219963;color: white;width: 100%;">Aceptar</button>
+                        </div>
+                    </form>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

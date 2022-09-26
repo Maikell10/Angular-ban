@@ -1,0 +1,89 @@
+<div class="bootstrap-wrapper">
+    <h2 class="header-title text-center">Cierre</h2>
+
+    <form (ngSubmit)="formSubmit()">
+        <div class="row">
+            <div class="col-md-4">
+                <mat-form-field appearance="fill" class="mt20 w100">
+                    <mat-label>Código</mat-label>
+                    <mat-select name="codigo" [(ngModel)]="formData.codigo">
+                        <mat-option [value]=""></mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field appearance="fill" class="mt20 w100">
+                    <mat-label>Descripción</mat-label>
+                    <mat-select name="descripcion" [(ngModel)]="formData.descripcion">
+                        <mat-option [value]=""></mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field appearance="fill" class="mt20 w100">
+                    <mat-label>Or. Mecanismo</mat-label>
+                    <mat-select name="mecanismo" [(ngModel)]="formData.mecanismo">
+                        <mat-option [value]=""></mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <mat-form-field appearance="fill" class="mt20 w100">
+                    <mat-label>Forma de Pago</mat-label>
+                    <mat-select name="formaPago" [(ngModel)]="formData.formaPago">
+                        <mat-option [value]=""></mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field appearance="fill" class="mt20 w100">
+                    <mat-label>Cajero</mat-label>
+                    <mat-select name="cajero" [(ngModel)]="formData.cajero">
+                        <mat-option [value]=""></mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field appearance="fill" class="mt20 w100">
+                    <mat-label>Moneda</mat-label>
+                    <mat-select name="moneda" [(ngModel)]="formData.moneda">
+                        <mat-option [value]=""></mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <mat-form-field appearance="fill" class="mt20 w100">
+                    <mat-label>Canal</mat-label>
+                    <mat-select name="canal" [(ngModel)]="formData.canal">
+                        <mat-option [value]=""></mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field appearance="fill" class="mt20 w100">
+                    <mat-label>Selecciona una fecha</mat-label>
+                    <input matInput type="date" [(ngModel)]="formData.fecha" name="fecha">
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field appearance="fill" class="mt20 w100">
+                    <mat-label>Selecciona una hora</mat-label>
+                    <input matInput type="time" [(ngModel)]="formData.hora" name="hora">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <app-spinner-load *ngIf="carga"></app-spinner-load>
+
+        <div class="container text-right">
+            <button mat-raised-button style="margin-right: 10px;">Guardar</button>
+            <button mat-raised-button mat-dialog-close>Cerrar</button>
+        </div>
+    </form>
+</div>

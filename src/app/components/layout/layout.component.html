@@ -1,0 +1,64 @@
+<div>
+    <div class="bootstrap-wrapper">
+        <div style="padding: 8px;display: flex">
+            <div class="col-md-10 col-9" style="cursor: pointer;align-self: center;display: flex;align-items: center;">
+                <mat-icon *ngIf="isLoggedIn" aria-hidden="false" fontIcon="view_headline" mat-button
+                    (click)="sidebarService.toggleRightSidenav()" style="margin-right: 4px;margin-bottom: 4px;">
+                </mat-icon>
+
+                <img src="../../../assets/logo.png" alt="" width="20%" style="min-width: 170px;" routerLink="/">
+            </div>
+            <div class="col-md-2 col-3 text-center" *ngIf="isLoggedIn">
+                <img src="../../../assets/usuario.png" alt="" style="width: 25px;height: 25px;">
+                <p>{{user}}</p>
+            </div>
+        </div>
+
+    </div>
+
+    <mat-sidenav-container class="example-container">
+        <mat-sidenav #sidenav mode="over" [opened]="sidebarService.opened" class="example-sidenav"
+            [fixedInViewport]="options.value.fixed" [fixedTopGap]="options.value.top"
+            [fixedBottomGap]="options.value.bottom">
+
+            <div *ngIf="isLoggedIn">
+                <hr style="background-color: #007953; height: 25px; width:100%;margin-top: -1px;">
+
+                <app-sidebar-menu></app-sidebar-menu>
+            </div>
+        </mat-sidenav>
+
+        <mat-sidenav-content [formGroup]="options">
+            <div>
+                <hr style="background-color: #007953; height: 25px; width:100%;margin-top: -1px;">
+            </div>
+
+            <router-outlet></router-outlet>
+
+
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+
+    <!-- Pie de Página-->
+    <mat-toolbar class="example-footer" style="display: table;padding: 0px;">
+        <div>
+            <hr style="background-color: #007953; height: 20px; width:100%">
+        </div>
+        <footer class="text-center mb10" style="margin-top: -10px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p
+                            style="font-weight: bold; color:#003C71;font-size: 14px;white-space: break-spaces;    line-height: normal;">
+                            Banesco
+                            Banco Universal, C.A. -
+                            RIF:
+                            J-07013380-5
+                            Copyright
+                            2002. Todos los derechos reservados. </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </mat-toolbar>
+</div>
